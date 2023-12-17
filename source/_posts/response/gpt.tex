@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+% \usepackage[backend=biber,style=verbose-trad2]{biblatex}
+% IEEE style
+\usepackage[backend=biber,style=ieee]{biblatex}
+\bibliography{ref}
+
+\title{Exploring Discrete Approximations of Manifolds in Computational Geometry}
+\author{Biber}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In this paper, we delve into the relationship between continuous manifolds and their discrete approximations, particularly focusing on the mesh functor \( g_\theta \) and its role in computational geometry.
+
+\section{Mesh Functor \( g_\theta \) and its Properties}
+The mesh functor \( g_\theta \), given a parameter \( \theta \), discretizes a continuous manifold \( M \) into a finite triangular mesh \( P \). This process is crucial in computational applications where exact manifold representations are infeasible. 
+
+\subsection{Definition and Continuity}
+The functor \( g_\theta \) can be formally defined as follows:
+\[ g_\theta : \mathbf{Man} \rightarrow \mathbf{SimpCplx} \]
+where \( \mathbf{Man} \) denotes the category of 3-dimensional manifolds and \( \mathbf{SimpCplx} \) the category of simplicial complexes. This functor preserves essential topological and geometric features of \( M \), albeit in a discretized form.
+
+\subsection{Error Analysis}
+An important aspect of \( g_\theta \) is the error introduced during the discretization. The Gromov-Hausdorff distance provides a measure of this error, offering insights into the fidelity of \( P \) as an approximation of \( M \).
+
+\section{Comparative Analysis}
+\subsection{Manifold \( M \) versus Mesh \( P \)}
+The fidelity of \( P \) in representing \( M \) is crucial for algorithms in computational geometry. Despite the inherent approximation, \( P \) maintains most of the critical geometric properties of \( M \), allowing for effective algorithmic processing.
+
+\subsection{Algorithmic Considerations}
+The discrete nature of \( P \) introduces unique computational challenges and opportunities. Algorithms must be adapted to handle the discrete structure efficiently, balancing accuracy and computational complexity.\autocite{coeurjolly2001DiscreteCurvatureBased}
+
+\section{Conclusion}
+Our exploration underscores the significance of the mesh functor \( g_\theta \) in bridging the gap between theoretical manifolds and their practical computational counterparts. This understanding is pivotal for advancing methods in computational geometry and related fields.
+\autocite{wu2020DeltaGradRapidRetraining}
+
+\printbibliography
+
+\end{document}

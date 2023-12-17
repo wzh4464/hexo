@@ -1,0 +1,159 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{coeurjolly2001DiscreteCurvatureBased}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=836cdd3e703711311e2c2c3ed5f8c589}{%
+           family={Coeurjolly},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0bf5a7b683fc5f586aaf593dad53ef5a}{%
+           family={Miguet},
+           familyi={M\bibinitperiod},
+           given={Serge},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6e0ad5d659762d4720a8e2b56e28734e}{%
+           family={Tougne},
+           familyi={T\bibinitperiod},
+           given={Laure},
+           giveni={L\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=80200461f4043423874eb1064f168643}{%
+           family={Arcelli},
+           familyi={A\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e8fd7070369dadf6a7c2cffa4bfb53f8}{%
+           family={Cordella},
+           familyi={C\bibinitperiod},
+           given={Luigi\bibnamedelima P.},
+           giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=eb4eda29cbfd190e746083e01b23cfb5}{%
+           family={Di\bibnamedelima Baja},
+           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Gabriella\bibnamedelima Sanniti},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \name{editorb}{3}{}{%
+        {{hash=97b8779c08da200ee2eb194bdc10ae4f}{%
+           family={Goos},
+           familyi={G\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=84d4ea2bd3ec736effccd97ee64d09ef}{%
+           family={Hartmanis},
+           familyi={H\bibinitperiod},
+           given={Juris},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e6d4340bf56539a33dcad95ee6e8fc5}{%
+           family={Van\bibnamedelima Leeuwen},
+           familyi={V\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c43ef523856b9527a18af10f7b32a21b}
+      \strng{fullhash}{c43ef523856b9527a18af10f7b32a21b}
+      \strng{bibnamehash}{c43ef523856b9527a18af10f7b32a21b}
+      \strng{authorbibnamehash}{c43ef523856b9527a18af10f7b32a21b}
+      \strng{authornamehash}{c43ef523856b9527a18af10f7b32a21b}
+      \strng{authorfullhash}{c43ef523856b9527a18af10f7b32a21b}
+      \strng{editorbibnamehash}{d8ee43c654d66ad8bfd7da1bc12c4b21}
+      \strng{editornamehash}{d8ee43c654d66ad8bfd7da1bc12c4b21}
+      \strng{editorfullhash}{d8ee43c654d66ad8bfd7da1bc12c4b21}
+      \strng{editorbbibnamehash}{3dfcf72b5841d3fc75d0df4fe9034b68}
+      \strng{editorbnamehash}{3dfcf72b5841d3fc75d0df4fe9034b68}
+      \strng{editorbfullhash}{3dfcf72b5841d3fc75d0df4fe9034b68}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we make an overview of the existing algorithms concerning the discrete curvature estimation. We extend the Worring and Smeulders [WS93] classification to new algorithms and we present a new and purely discrete algorithm based on discrete osculating circle estimation.}
+      \field{booktitle}{Lecture {{Notes}} in {{Computer Science}} (Including Subseries {{Lecture Notes}} in {{Artificial Intelligence}} and {{Lecture Notes}} in {{Bioinformatics}})}
+      \field{editorbtype}{redactor}
+      \field{isbn}{3-540-42120-3}
+      \field{issn}{16113349}
+      \field{langid}{english}
+      \field{title}{Discrete {{Curvature Based}} on {{Osculating Circle Estimation}}}
+      \field{volume}{2059}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{pages}{303\bibrangedash 312}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/3-540-45129-3_27
+      \endverb
+    \endentry
+    \entry{wu2020DeltaGradRapidRetraining}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=9ee4fadf015b986478f3a513ed700a87}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yinjun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=facc1c652916b234e238c4cd8bb5ff9d}{%
+           family={Dobriban},
+           familyi={D\bibinitperiod},
+           given={Edgar},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c54a5e1c2021819886577faa72891477}{%
+           family={Davidson},
+           familyi={D\bibinitperiod},
+           given={Susan\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{cd3a426c9fc196593aa7e076da275a36}
+      \strng{fullhash}{cd3a426c9fc196593aa7e076da275a36}
+      \strng{bibnamehash}{cd3a426c9fc196593aa7e076da275a36}
+      \strng{authorbibnamehash}{cd3a426c9fc196593aa7e076da275a36}
+      \strng{authornamehash}{cd3a426c9fc196593aa7e076da275a36}
+      \strng{authorfullhash}{cd3a426c9fc196593aa7e076da275a36}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Machine learning models are not static and may need to be retrained on slightly changed datasets, for instance, with the addition or deletion of a set of data points. This has many applications, including privacy, robustness, bias reduction, and uncertainty quantifcation. However, it is expensive to retrain models from scratch. To address this problem, we propose the DeltaGrad algorithm for rapid retraining machine learning models based on information cached during the training phase. We provide both theoretical and empirical support for the effectiveness of DeltaGrad, and show that it compares favorably to the state of the art.}
+      \field{booktitle}{37th {{International Conference}} on {{Machine Learning}} ({{ICML}})}
+      \field{day}{30}
+      \field{eprintclass}{cs, stat}
+      \field{eprinttype}{arxiv}
+      \field{eventtitle}{International {{Conference}} on {{Machine Learning}}}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{shorttitle}{{{DeltaGrad}}}
+      \field{title}{{{DeltaGrad}}: {{Rapid}} Retraining of Machine Learning Models}
+      \field{volume}{PartF16814}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{10286\bibrangedash 10297}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.48550/arxiv.2006.14755
+      \endverb
+      \verb{eprint}
+      \verb 2006.14755
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

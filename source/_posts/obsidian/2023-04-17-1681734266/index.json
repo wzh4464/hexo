@@ -1,0 +1,20 @@
+{
+  "version": "2.0",
+  "clipId": "1681734266",
+  "format": "md",
+  "title": "Obsidian—知识库搭建指南 - 知乎",
+  "link": "https://www.zhihu.com/column/c_1408784036097220608",
+  "category": "obsidian",
+  "tags": [
+    "obsidian"
+  ],
+  "created_at": "2023-04-17 20:24:26",
+  "mainPath": "index.md",
+  "paths": [
+    "index.json",
+    "assets/1681734266-a753df81461725ce47c3b3373271afdd.jpg",
+    "assets/1681734266-c370f213f7dce719c11b42faee9464e6.png",
+    "assets/1681734266-7e3e22b626a7b1a49c5eac5f5e081d32.png",
+    "index.md"
+  ]
+}

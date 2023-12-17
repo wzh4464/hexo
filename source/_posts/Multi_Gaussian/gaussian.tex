@@ -1,0 +1,124 @@
+%%%
+ % File: /gaussian.tex
+ % Created Date: Monday September 4th 2023
+ % Author: Zihan
+ % -----
+ % Last Modified: Tuesday, 5th September 2023 10:34:39 am
+ % Modified By: the developer formerly known as Zihan at <wzh4464@gmail.com>
+ % -----
+ % HISTORY:
+ % Date      		By   	Comments
+ % ----------		------	---------------------------------------------------------
+%%%
+
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry} % Adjust margins
+\usepackage{setspace} % Adjust line spacing
+\onehalfspacing 
+\usepackage{amsmath}
+\usepackage{amssymb}
+% \usepackage{mathptmx} 
+% theorems
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+
+\title{Gaussian Distribution}
+\author{Zihan}
+\begin{document}
+\maketitle
+
+\section{Standard Gaussian Distribution}
+The probability density function of the standard $n$-dimensional Gaussian distribution is given by:
+\begin{equation}
+    p(x)=\frac{1}{(2\pi)^{n/2}}\exp\left(-\frac{1}{2}x^{\top}x\right)
+\end{equation}
+where $x\in\mathbb{R}^n$, the covariance matrix is $I$, and the mean is $0$.
+
+\section{Linear Transformation of Gaussian Distribution}
+If we have a linear transformation $y=Ax+b$ of a Gaussian distribution with mean $b$ and covariance matrix $AA^{\top}$, then the probability density function of $y$ is given by:
+\begin{equation}
+    p(y)=\frac{1}{\sqrt{(2\pi)^n|AA^{\top}|}}\exp\left(-\frac{1}{2}(y-b)^{\top}(AA^{\top})^{-1}(y-b)\right)
+\end{equation}
+
+
+So the probability density function of the Gaussian distribution is given by:
+\begin{equation}
+    p(y)=\frac{\sqrt{|B|}}{\sqrt{(2\pi)^n}}\exp\left(-\frac{1}{2}(y-\mu)^{\top}B(y-\mu)\right)
+\end{equation}
+where $B$ is a symmetric positive definite matrix. If the corresponding random variable is $Y$, then we have:
+\begin{align}
+    Y                     & \sim\mathcal{N}(\mu, B^{-1})              \\
+    \operatorname{E}[Y]   & =\mu                                      \\
+    \operatorname{Cov}[Y] & =B^{-1}                                   \\
+    (B^{-1})_{ij}         & =\operatorname{E}[(Y_i-\mu_i)(Y_j-\mu_j)]
+\end{align}
+
+\subsection{Characteristic Function}
+The characteristic function of the generalized Gaussian distribution is given by:
+\begin{equation}
+    \phi(t)=\exp\left(-\frac{1}{2}t^{\top}Bt+i\mu^{\top}t\right)
+\end{equation}
+% 证明
+\begin{proof}
+    Since $B$ is a symmetric positive definite, we can write $B^{-1}=P P^{\top}$, where $P$ is an invertible matrix.
+    Consider the random variable $X$ as a standard Gaussian distribution, and $Z=PX + \mu$. Then we have:
+    \begin{align}
+        p(z) & = \frac{|P|}{2\pi^\frac{n}{2}} \exp\left(-\frac{1}{2}(z-\mu)^{\top}(P^{-1})^{\top}P^{-1}(z-\mu)\right) \\
+             & = \frac{|P|}{2\pi^\frac{n}{2}} \exp\left(-\frac{1}{2}(z-\mu)^{\top}B(z-\mu)\right)                     \\
+             & = \sqrt{\frac{|B|}{(2\pi)^n}} \exp\left(-\frac{1}{2}(z-\mu)^{\top}B(z-\mu)\right)
+    \end{align}
+    which means $Z$ is a generalized Gaussian distribution with mean $\mu$ and covariance matrix $B$.
+
+    The characteristic function of $Z$ is given by:
+    \begin{align}
+        \phi(t) & = \operatorname{E}[\exp(i t^{\top}Z)]                                                      \\
+                & = \operatorname{E}[\exp(i t^{\top}(PX+\mu))]                                               \\
+                & = \operatorname{E}[\exp(i (P^{\top}t)^{\top}X)] \exp(i\mu^{\top}t)                         \\
+                & = \exp\left(-\frac{1}{2}(P^{\top}t)^{\top}P^{\top}t\right) \exp(i\mu^{\top}t) \label{eq:1} \\
+                & = \exp\left(-\frac{1}{2}t^{\top}Bt\right) \exp(i\mu^{\top}t)
+    \end{align}
+    Equation \ref{eq:1} is because $X$ is a standard Gaussian distribution, so its characteristic function is $\exp\left(-\frac{1}{2}t^{\top}t\right)$.
+\end{proof}
+
+\section{Convergence of Gaussian Distribution}
+\begin{theorem}[Convergence of Gaussian Distribution]
+    Suppose $X_k:\Omega\rightarrow\mathbb{R}^n$ is normal for all $k$ and that $X_k\rightarrow X$ in $L^2(\Omega)$, i.e. $\operatorname{E}[|X_k-X|^2]\rightarrow 0$ as $k\rightarrow\infty$. Then $X$ is normal.
+\end{theorem}
+\begin{proof}
+    $$\operatorname{E}[\exp(i t^{\top}X_k)]-\operatorname{E}[\exp(i t^{\top}X)]^2\le \operatorname{E}[|X_k-X|^2] |t|^2\rightarrow 0$$ as $k\rightarrow\infty$. So $\operatorname{E}[\exp(i t^{\top}X_k)]\rightarrow \operatorname{E}[\exp(i t^{\top}X)]$ as $k\rightarrow\infty$. So $X$ is normal.
+\end{proof}
+
+\section{Co-variance Matrix}
+$$ \phi(u)=\exp\left(-\frac{1}{2}u^{\top}Bu+i\mu^{\top}t\right) $$
+\begin{align}
+    \operatorname{E}[X_i X_j] & =- \frac{\partial^2 \phi}{\partial u_i \partial u_j}(0)                                                                                \\
+                              & =- \frac{\partial}{\partial u_i} \frac{\partial}{\partial u_j} \bigg|_{t=0} \exp \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \\
+                              & =\mu_i \mu_j + \frac{1}{2} B_{ij} + \frac{1}{2} \delta_{ij}
+\end{align}
+
+\begin{align}
+    \operatorname{Cov}[X_i,X_j] & =\operatorname{E}[(X_i-\mu_i)(X_j-\mu_j)]                                                      \\
+                                & =\operatorname{E}[X_i X_j]-\mu_i \operatorname{E}[X_j]-\mu_j \operatorname{E}[X_i]+\mu_i \mu_j \\
+                                & =\frac{1}{2} B_{ij} + \frac{1}{2} \delta_{ij}
+\end{align}
+
+\section{Co-variance Matrix for Brownian Motion ($2$-stage)}
+\begin{align*}
+    P^0(B_{t_1} \in F_1, B_{t_2} \in F_2) & =  \int_{F_1 \times F_2} p(t_1, 0, x_1) p(t_2-t_1, x_1, x_2) \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    \operatorname{E}[B_{t_1} B_{t_2}]     & =  \int_{\mathbb{R}^2} x_1 x_2 p(t_1, 0, x_1) p(t_2-t_1, x_1, x_2) \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    &= \int_{\mathbb{R}^2} x_1 x_2 \frac{\exp \left(-\frac{x_1^2}{2 t_1}\right)}{(\sqrt{2 \pi t_1})^{n} } \frac{\exp \left(-\frac{(x_2-x_1)^2}{2 (t_2-t_1)}\right)}{(\sqrt{2 \pi (t_2-t_1)})^{n} } \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    &= (2\pi)^{-n} [t_1(t_2-t_1)]^{-n/2} \int_{\mathbb{R}^2} x_1 x_2 \exp \left(-\frac{x_1^2}{2 t_1}-\frac{(x_2-x_1)^2}{2 (t_2-t_1)}\right) \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    % define as
+    &\triangleq (2\pi)^{-n} [t_1(t_2-t_1)]^{-n/2} I \\
+\end{align*}
+\begin{align*}
+    I &= \int_{\mathbb{R}^2} x_1 x_2 \exp \left(-\frac{x_1^2}{2 t_1}-\frac{(x_2-x_1)^2}{2 (t_2-t_1)}\right) \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    &= \int_{-\infty}^{\infty} x_1 \exp \left(-\frac{x_1^2}{2 t_1}\right) \mathrm{d}x_1 \int_{-\infty}^{\infty} x_2 \exp \left(-\frac{(x_2-x_1)^2}{2 (t_2-t_1)}\right) \mathrm{d}x_2 \\
+    &= \int_{-\infty}^{\infty} x_1^2 \exp \left(-\frac{x_1^2}{2 t_1}\right) \mathrm{d}x_1 C_1 \\
+    &= t_1^2 C_1 C_2
+\end{align*}
+Thus we have:
+\begin{equation}
+    \operatorname{E}[B_{t_1} B_{t_2}] = t_1^2
+\end{equation}
+\end{document}

@@ -1,0 +1,121 @@
+% M --f--> N
+% |       |
+% g       h
+% |       |
+% P --i--> Q 
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+
+\title{Appendix}
+\date{}
+\author{}
+\begin{document}
+\maketitle
+% \section{Remark}
+
+% In computational applications, particularly those involving cell surfaces and convex hulls, these structures are often represented by discrete triangular meshes. This discretization necessitates a deviation from purely theoretical analysis, which cannot be directly applied to these computational models. Nonetheless, the disparity between the original manifolds and their discrete counterparts can be quantitatively assessed through the continuity properties of the mappings involved. Consequently, this allows for the preservation of most geometric characteristics and facilitates an accurate approximation of the critical points where the distance function reaches its minima, resulting in the algorithm's correctness.
+
+\section{Relationship between the manifolds and discrete approximations}
+
+\begin{figure}[ht]
+  \begin{tikzpicture}
+    \node (M) at (0,0) {$M$};
+    \node (N) at (4,0) {$N$};
+    \node (P) at (0,-2) {$P$};
+    \node (Q) at (4,-2) {$Q$};
+    \node (Q') at (3,-2) {$Q'$};
+
+    \draw[->] (M) -- node[above] {$f$} (N);
+    \draw[->] (M) -- node[left] {$g_\theta$} (P);
+    \draw[->] (P) -- node[below] {$\bar{f}$} (Q');
+    \draw[->] (N) -- node[right] {$g_\theta$} (Q);
+    \draw[<->] (Q) -- node[above] {$\sim $} (Q');
+    % \draw[<->] (Q);
+  \end{tikzpicture}
+  \caption{
+    \\ $M$ : cell surface \\
+    $N$ : convex hull of $M$ \\
+    $P$ : discrete approximation of $M$ \\
+    $Q$ : discrete approximation of $N$ \\
+    $Q'$ : convex hull of $P$ }
+\end{figure}
+
+\section{Preliminaries}
+
+\subsection{Hausdorff distance}
+Let $M$ be a $3$-dimensional manifold, and $N$ be the convex hull of $M$. Since $M$ and $N$ are both compact and Riemann in $\mathbb{R}^3$, the Hausdorff distance between $M$ and $N$ can be defined as stated in Chap 7 in \cite{gromov1981groups}:
+
+\begin{definition}
+  Let $M$ and $N$ be two compact subsets of $\mathbb{R}^3$. The Hausdorff distance between $M$ and $N$ is defined as
+  $$
+    d_{\text{H}}(M, N) = \max \left\{ \sup_{x \in M} \inf_{y \in N} |x - y|, \sup_{y \in N} \inf_{x \in M} |x - y| \right\}
+  $$
+\end{definition}
+
+We are to prove that the Hausdorff distance between $N$ and $Q'$ is small enough. From the metric geometry, the geometric properties between two manifolds have tiny deviations controlled by the Hausdorff distance between them, in which context the location of minima of the distance function is included.
+
+\subsection{Functors between manifold category $\mathbf{Man}$ and simplicial complex category $\mathbf{SimpCplx}$}
+
+Denote the cateogry of $3$-dimensional manifolds as $\mathbf{Man}$, and the convex-hull morphism $f$ is defined as
+$$
+  \begin{aligned}
+    f: \mathbf{Man} & \rightarrow \mathbf{Man} \\
+    M               & \mapsto N
+  \end{aligned}
+$$ where $N$ is the convex hull of $M$. Note that $f$ is a continuous morphism \cite{bobenko2016advances}.
+
+Given $\theta$, a mesh map $g_\theta$:
+
+$$
+  \begin{aligned}
+    g_\theta: \mathbf{Man} & \rightarrow \mathbf{SimpCplx} \\
+    M                      & \mapsto P
+  \end{aligned}
+$$ where $P$ is the discrete approximation of $M$ with mesh size $\theta$. If $Q'$ were the same as $Q$, then a good approximation functor would be defined, and any property of $M, N$ can be derived from $P, Q(=Q')$, respectively. Though $Q'$ is not necessarily the same as $Q$, we can still prove that $d_{\text{H}}(N, Q')$ is small enough.
+
+
+\section{Proof of which $Q'$ is a good approximation of $N$}
+
+\begin{proposition}
+  $\lim_{\theta \to 0} d_{\text{H}}(N, Q') = 0$
+\end{proposition}
+
+\begin{proof}
+  The proof is from the continuity of $f$.
+  Since $g_\theta$ is a $\theta$-approximation, $d_{\text{H}}(M, P) < 2\theta$. Then $\forall \epsilon > 0$, there exists $\theta > 0$ such that $d_{\text{H}}(M, P) < \epsilon$.
+\end{proof}
+
+\begin{thebibliography}{9}
+  \bibitem{gromov1981groups}
+  Burago, D., Burago, Y., Ivanov, S., 2001.
+  \textit{A course in metric geometry}, Graduate Studies in Mathematics.
+  American Mathematical Society, Providence, Rhode Island.
+  \texttt{https://doi.org/10.1090/gsm/033}
+
+  % Malkoun, J., Olver, P.J., 2021. Continuous maps from spheres converging to boundaries of convex hulls. Forum of Mathematics, Sigma 9, e13. https://doi.org/10.1017/fms.2021.10
+  % \bibitem{malkoun2021continuous}
+  % Malkoun, J., Olver, P.J., 2021.
+  % Continuous maps from spheres converging to boundaries of convex hulls.
+  % Forum of Mathematics, Sigma 9, e13.
+  % \texttt{https://doi.org/10.1017/fms.2021.10}
+
+  % Bobenko, A.I. (Ed.), 2016. Advances in discrete differential geometry. Springer Berlin Heidelberg, Berlin, Heidelberg. https://doi.org/10.1007/978-3-662-50447-5
+  \bibitem{bobenko2016advances}
+  Bobenko, A.I. (Ed.), 2016.
+  \textit{Advances in discrete differential geometry}.
+  Springer Berlin Heidelberg, Berlin, Heidelberg.
+  \texttt{https://doi.org/10.1007/978-3-662-50447-5}
+
+\end{thebibliography}
+
+
+\end{document}
