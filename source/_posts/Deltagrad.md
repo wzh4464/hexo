@@ -1,5 +1,5 @@
 ---
-title: DeltaGrad: Rapid Re-Training of Machine Learning Models
+title: DeltaGrad - Rapid Re-Training of Machine Learning Models
 ---
 # DeltaGrad: Rapid Re-Training of Machine Learning Models
 
